@@ -21,4 +21,5 @@ CREATE TABLE `role` (
                         UNIQUE KEY `role_name_uindex` (`name`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COMMENT='角色表';
 
-insert into role (id, name) VALUES (1, '超级管理员');
+insert into role (id, name)
+VALUES (1, '超级管理员'), (2, '管理员');

@@ -2,6 +2,7 @@ package cn.dingshichen.ksbt.service
 
 import cn.dingshichen.ksbt.entity.User
 import cn.dingshichen.ksbt.repository.UserRepository
+import cn.hutool.crypto.SecureUtil
 import org.springframework.stereotype.Service
 
 @Service
@@ -11,4 +12,5 @@ class UserService(
 
     fun getById(id: Int): User = userRepository.findById(id).orElseThrow()
 
+    private fun encryptPassword(password: String) = SecureUtil.md5().digestHex16(password)
 }
