@@ -13,4 +13,6 @@ class UserService(
     fun getById(id: Int): User = userRepository.findById(id).orElseThrow()
 
     private fun encryptPassword(password: String) = SecureUtil.md5().digestHex16(password)
+
+    fun listByRoleIdOrName(roleId: Int?, name: String?) = userRepository.findByRoleIdOrName(roleId, name)
 }
