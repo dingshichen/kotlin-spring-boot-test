@@ -1,5 +1,8 @@
 package cn.dingshichen.ksbt.control
 
+import cn.dingshichen.ksbt.dto.R
+import cn.dingshichen.ksbt.dto.success
+import cn.dingshichen.ksbt.entity.User
 import cn.dingshichen.ksbt.service.UserService
 import org.springframework.web.bind.annotation.GetMapping
 import org.springframework.web.bind.annotation.PathVariable
@@ -13,7 +16,11 @@ class UserController(
 ) {
 
     @GetMapping("/{id}")
-    fun getUser(@PathVariable id: Int) = userService.getById(id)
+    fun getUser(@PathVariable id: Int): R<User> {
+        return success {
+            userService.getById(id)
+        }
+    }
 
 
 }
