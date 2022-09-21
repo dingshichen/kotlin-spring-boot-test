@@ -23,3 +23,10 @@ CREATE TABLE `role` (
 
 insert into role (id, name)
 VALUES (1, '超级管理员'), (2, '管理员');
+
+insert into user (id, role_id, name, account, phone_number, password, status)
+values (1, 1, '超管', 'admin', '100000', '49ba59abbe56e057', 0),
+       (2, 2, '丁时辰', 'ding.shichen', '17705505050', '49ba59abbe56e057', 0),
+       (3, 2, '王一博', 'wang.yibo', '18080080808', '49ba59abbe56e057', 0),
+       (4, 2, '易烊千玺', 'yi.yangqianxi', '13033000033', '49ba59abbe56e057', 0),
+       (5, 2, '朱一龙', 'zhu.yilong', '17070700077', '49ba59abbe56e057', 0);

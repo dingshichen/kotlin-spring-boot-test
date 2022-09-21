@@ -5,6 +5,8 @@ import cn.dingshichen.ksbt.dto.isSuccess
 import com.google.gson.Gson
 import com.google.gson.reflect.TypeToken
 import org.junit.jupiter.api.Assertions.assertTrue
+import org.slf4j.Logger
+import org.slf4j.LoggerFactory
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.boot.test.context.SpringBootTest
 import org.springframework.http.MediaType
@@ -23,7 +25,9 @@ import java.lang.reflect.Type
  * Junit 5 不需要指定 @RunWith
  */
 @SpringBootTest(classes = [KotlinSpringBootTestApplication::class])
-class BaseTestContext
+class BaseTestContext(
+    val log: Logger = LoggerFactory.getLogger(BaseTestContext::class.java)
+)
 
 
 //@AutoConfigureMockMvc     // 如果不需要自主构建 MockMvc 的话就使用此注解来构建 mockMvc
