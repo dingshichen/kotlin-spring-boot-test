@@ -20,6 +20,7 @@ import org.springframework.test.web.servlet.setup.MockMvcBuilders
 import org.springframework.util.LinkedMultiValueMap
 import org.springframework.web.context.WebApplicationContext
 import java.lang.reflect.Type
+import java.nio.charset.Charset
 
 /**
  * Junit 5 不需要指定 @RunWith
@@ -40,6 +41,7 @@ class WebTestContext : BaseTestContext() {
         MockMvcBuilders.webAppContextSetup(context)
             .alwaysExpect<DefaultMockMvcBuilder> { status().isOk }
             .alwaysExpect<DefaultMockMvcBuilder> { content().contentType(MediaType.APPLICATION_JSON) }
+            .defaultResponseCharacterEncoding<DefaultMockMvcBuilder>(Charset.defaultCharset())
             .build()
     }
 

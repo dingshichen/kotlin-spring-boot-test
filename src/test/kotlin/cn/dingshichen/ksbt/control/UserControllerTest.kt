@@ -15,18 +15,21 @@ class UserControllerTest : WebTestContext() {
     @Test
     fun getUser() {
         val result = mockGet<R<User>>(object : TypeToken<R<User>>() {}.type, "/user/1")
-        assertTrue { result.isFail() }
+        assertTrue { result.isSuccess() }
+        assertNotNull(result.data)
+        assertEquals("超管", result.data!!.name)
     }
 
     @Test
     fun getUser2() {
         val params = mapOf(
-            "name" to listOf("ding.shichen"),
-            "roleId" to listOf("1")
+            "name" to listOf("丁时辰"),
+            "roleId" to listOf("2")
         )
         val result = mockGet<R<List<User>>>(object : TypeToken<R<List<User>>>() {}.type, "/user/find", params)
         assertTrue { result.isSuccess() }
-        assertTrue { result.data.isNullOrEmpty() }
+        assertFalse { result.data.isNullOrEmpty() }
+        assertEquals(4, result.data!!.size)
     }
 
 
