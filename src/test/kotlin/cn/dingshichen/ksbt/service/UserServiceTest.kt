@@ -11,6 +11,7 @@ import org.junit.jupiter.params.provider.CsvSource
 import org.junit.jupiter.params.provider.ValueSource
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.test.util.ReflectionTestUtils
+import java.util.NoSuchElementException
 
 class UserServiceTest: BaseTestContext() {
 
@@ -29,6 +30,16 @@ class UserServiceTest: BaseTestContext() {
             { assertNotNull(user) },
             { assertEquals("admin", user.account) }
         )
+    }
+
+    /**
+     * 断言异常
+     */
+    @Test
+    fun getByIdNotFound() {
+        assertThrows(NoSuchElementException::class.java) {
+            userService.getById(-1)
+        }
     }
 
     /**
