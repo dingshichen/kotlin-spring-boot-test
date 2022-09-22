@@ -11,9 +11,9 @@ import org.slf4j.LoggerFactory
  * 指定测试方法的运行顺序策略
  */
 @TestMethodOrder(MethodOrderer.OrderAnnotation::class)
-class ServiceOrderMethodTest {
+class FunctionOrderTest {
 
-    private val log: Logger = LoggerFactory.getLogger(ServiceOrderMethodTest::class.java)
+    private val log: Logger = LoggerFactory.getLogger(FunctionOrderTest::class.java)
 
     @Test
     @Order(3)

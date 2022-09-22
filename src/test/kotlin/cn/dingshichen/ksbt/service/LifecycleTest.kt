@@ -4,7 +4,7 @@ import org.junit.jupiter.api.*
 import org.slf4j.Logger
 import org.slf4j.LoggerFactory
 
-class ServiceDefaultTest {
+class LifecycleTest {
 
     /**
      * 在每个 test 方法前都会运行一次
@@ -34,7 +34,7 @@ class ServiceDefaultTest {
 
     companion object {
 
-        private val log: Logger = LoggerFactory.getLogger(ServiceDefaultTest::class.java)
+        private val log: Logger = LoggerFactory.getLogger(LifecycleTest::class.java)
 
         /**
          * 在所有 test 方法运行前运行一次
