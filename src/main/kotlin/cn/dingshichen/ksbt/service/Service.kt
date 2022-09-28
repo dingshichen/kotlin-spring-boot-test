@@ -24,4 +24,6 @@ class UserService(
             .orElseThrow()
             .also { cacheUser = it }
     }
+
+    fun isBlocked(id: Int) = getById(id).status!!.toInt() == 1
 }
