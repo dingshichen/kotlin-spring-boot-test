@@ -2,13 +2,11 @@ package cn.dingshichen.ksbt.control
 
 import cn.dingshichen.ksbt.WebTestContext
 import cn.dingshichen.ksbt.dto.R
-import cn.dingshichen.ksbt.dto.isFail
 import cn.dingshichen.ksbt.dto.isSuccess
 import cn.dingshichen.ksbt.entity.User
 import com.google.gson.reflect.TypeToken
-import org.junit.jupiter.api.Test
-
 import org.junit.jupiter.api.Assertions.*
+import org.junit.jupiter.api.Test
 
 class UserControllerTest : WebTestContext() {
 
